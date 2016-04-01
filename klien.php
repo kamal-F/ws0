@@ -9,7 +9,7 @@ $client2 = new SoapClient ( $wsdl, array('cache_wsdl' => WSDL_CACHE_NONE, 'trace
 //PERHATIKAN WSDL !!!
 
 //eksekusi servis ke-1
-$return = $client2->hello('rambo sopan');
+$return = $client2->hello('ervina');
 echo '<p>';
 echo $return;
 echo '</p>';
@@ -17,13 +17,15 @@ echo '</p>';
 //eksekusi servis ke-2
 $return2 = $client2->cekBarang('MG1122');
 echo '<p>';
-echo 'jumlah barang='.$return2;
+echo 'jumlah barang isinya adalah='.$return2;
 echo '</p>';
 
 //eksekusi servis ke-3
 //document literal style
 //2 input dikirim dalam 1 objek, return 1 output
-$nilai=array('prm1'=>10, 'prm2'=>29);
+//$nilai=array('prm1'=>10, 'prm2'=>29);
+$nilai=['prm1'=>10, 'prm2'=>29];
+
 $return3 = $client2->tambah($nilai);
 echo '<p>';
 echo 'hasil tambah='.$return3;
